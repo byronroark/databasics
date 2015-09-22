@@ -20,9 +20,9 @@ NOTE: You may want to keep a backup of the `store.sqlite3` file in case you dama
 ## Explorer Mode
 
 - [X] How many users are there?
-  select count(*) from users;
+  `select count(*) from users;`
 - [X] What are the 5 most expensive items?
-  select "price", "title" from "items" order by "price" desc limit 5;
+  `select "price", "title" from "items" order by "price" desc limit 5;`
 - [ ] What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)
 - [ ] Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?
 - [ ] Correct Virginie Mitchell's address to "New York, NY, 10108".
