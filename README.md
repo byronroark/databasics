@@ -25,7 +25,8 @@ NOTE: You may want to keep a backup of the `store.sqlite3` file in case you dama
   `select * from "items" order by "price" desc limit 5;`
 - [X] What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)  
   `select * from "items" where category like "%books%" order by "price" limit 1;`
-- [ ] Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?
+- [X] Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?  
+  `select "first_name", "last_name", "street", "city", "state", "zip" from "users" as u join "addresses" as a on u.id = a.user_id;`
 - [ ] Correct Virginie Mitchell's address to "New York, NY, 10108".
 - [ ] How much would it cost to buy one of each tool?
 - [ ] How many total items did we sell?
