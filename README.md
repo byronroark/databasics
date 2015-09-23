@@ -31,12 +31,23 @@ NOTE: You may want to keep a backup of the `store.sqlite3` file in case you dama
 - [X] Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?  
   `SELECT "first_name", "last_name", "street", "city", "state", "zip" FROM "users" AS u JOIN "addresses" AS a on u.id = a.user_id WHERE "street"="6439 Zetta Hills";`  
   *ANSWER = Corrine Little*
-- [ ] Correct Virginie Mitchell's address to "New York, NY, 10108".
-- [ ] How much would it cost to buy one of each tool?
-- [ ] How many total items did we sell?
-- [ ] How much was spent on books?
-- [ ] Simulate buying an item by inserting a User for yourself and an Order for that User.
-
+- [X] Correct Virginie Mitchell's address to "New York, NY, 10108".  
+  `UPDATE addresses SET city="New York", zip="10108" WHERE user_id=(SELECT id FROM users WHERE first_name = "Virginie");`  
+  *ANSWER = Virginie Mitchell 12263 Jake Crossing New York 10108
+Virginie Mitchell 83221 Mafalda Canyo New York 10108*
+- [X] How much would it cost to buy one of each tool?  
+  `SELECT SUM(price) FROM items WHERE category LIKE "Tools%"`  
+  *ANSWER = 24605*
+- [X] How many total items did we sell?  
+  `SELECT SUM(quantity) FROM orders;`  
+  *ANSWER = 2125*
+- [X] How much was spent on books?  
+  `SELECT category, sum(price) FROM items JOIN orders ON items.id = orders.item_id WHERE category="Books";`  
+  *ANSWER = 420566*
+- [X] Simulate buying an item by inserting a User for yourself and an Order for that User.  
+  `INSERT INTO users (first_name, last_name, email) VALUES ("Byron", "Roark", "byronroark@gmail.com");`  
+  `INSERT INTO orders (item_id, quantity, user_id, created_at) VALUES ("78", "2", "51", datetime());`  
+  
 ## Adventure Mode
 
 - [ ] What item was ordered most often? Grossed the most money?
