@@ -21,16 +21,16 @@ NOTE: You may want to keep a backup of the `store.sqlite3` file in case you dama
 
 - [X] How many users are there?  
   `SELECT count(*) FROM "users";`  
-  `ANSWER = 50`
+  *ANSWER = 50*
 - [X] What are the 5 most expensive items?  
   `SELECT * FROM "items" ORDER BY "price" DESC LIMIT 5;`  
-  `ANSWER = Small Cotton Gloves, Small Wooden Comput, Awesome Granite Pan, Sleek Wooden Hat, Ergonomic Steel Car`
+  *ANSWER = Small Cotton Gloves, Small Wooden Comput, Awesome Granite Pan, Sleek Wooden Hat, Ergonomic Steel Car*
 - [X] What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)  
   `SELECT * FROM "items" WHERE category LIKE "%books%" ORDER BY "price" LIMIT 1;`  
-  `ANSWER = Ergonomic Granite Chair`
+  *ANSWER = Ergonomic Granite Chair*
 - [X] Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?  
   `SELECT "first_name", "last_name", "street", "city", "state", "zip" FROM "users" AS u JOIN "addresses" AS a on u.id = a.user_id WHERE "street"="6439 Zetta Hills";`  
-  `Corrine Little`
+  *ANSWER = Corrine Little*
 - [ ] Correct Virginie Mitchell's address to "New York, NY, 10108".
 - [ ] How much would it cost to buy one of each tool?
 - [ ] How many total items did we sell?
