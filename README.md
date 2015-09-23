@@ -9,8 +9,8 @@ Before closing the homework assignment issue:
   - [X] For each question (just after or below the question itself) include the *answer* to the question asked.
 
 - Also:
-  - [ ] Commit the updated `store.sqlite3` database file
-  - [ ] Include a link to your forked repo in the comments when closing the issue.
+  - [X] Commit the updated `store.sqlite3` database file
+  - [X] Include a link to your forked repo in the comments when closing the issue.
 
 
 NOTE: To run sqlite with this database: `sqlite3 store.sqlite3`
@@ -47,7 +47,7 @@ Virginie Mitchell 83221 Mafalda Canyo New York 10108*
 - [X] Simulate buying an item by inserting a User for yourself and an Order for that User.  
   `INSERT INTO users (first_name, last_name, email) VALUES ("Byron", "Roark", "byronroark@gmail.com");`  
   `INSERT INTO orders (item_id, quantity, user_id, created_at) VALUES ("78", "2", "51", datetime());`  
-  
+
 ## Adventure Mode
 
 - [ ] What item was ordered most often? Grossed the most money?
